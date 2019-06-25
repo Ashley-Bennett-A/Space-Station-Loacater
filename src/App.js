@@ -1,26 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import MapContainer from "./components/Map";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    loading: true,
+    longitude: "",
+    latitude: "",
+    error: false
+  };
+
+  componentDidMount() {
+    fetch("http://api.open-notify.org/iss-now.json")
+      .then(results => {
+        return results.json();
+      })
+      .then(data => {
+        if (data.message === "success") {
+          console.log(data);
+          this.setState({
+            loading: false,
+            longitude: data.iss_position.longitude,
+            latitude: data.iss_position.latitude,
+            error: false
+          });
+        } else {
+          this.setState({ error: true });
+        }
+      });
+  }
+  render() {
+    return (
+      <div className="App">
+        <h1>Where is the International Space Station over right now</h1>
+        <MapContainer
+          latitude={this.state.latitude}
+          longitude={this.state.latitude}
+          loading={this.state.loading}
+          error={this.state.error}
+        />
+      </div>
+    );
+  }
 }
 
 export default App;
