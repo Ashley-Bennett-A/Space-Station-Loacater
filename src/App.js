@@ -7,7 +7,8 @@ class App extends React.Component {
     loading: true,
     longitude: "",
     latitude: "",
-    error: false
+    error: false,
+    map: undefined
   };
 
   componentDidMount() {
@@ -16,29 +17,37 @@ class App extends React.Component {
         return results.json();
       })
       .then(data => {
-        if (data.message === "success") {
-          console.log(data);
-          this.setState({
-            loading: false,
-            longitude: data.iss_position.longitude,
-            latitude: data.iss_position.latitude,
-            error: false
-          });
-        } else {
-          this.setState({ error: true });
-        }
+        let map = (
+          <div className="mapContainer">
+            <MapContainer
+              latitude={data.iss_position.latitude}
+              longitude={data.iss_position.longitude}
+            />
+          </div>
+        );
+
+        this.setState({ map: map });
+
+        // if (data.message === "success") {
+        //   console.log(data);
+        //   this.setState({
+        //     loading: false,
+        //     longitude: data.iss_position.longitude,
+        //     latitude: data.iss_position.latitude,
+        //     error: false
+        //   });
+        // } else {
+        //   this.setState({
+        //     error: true
+        //   });
+        // }
       });
   }
   render() {
     return (
       <div className="App">
-        <h1>Where is the International Space Station over right now</h1>
-        <MapContainer
-          latitude={this.state.latitude}
-          longitude={this.state.latitude}
-          loading={this.state.loading}
-          error={this.state.error}
-        />
+        <h1> Where is the International Space Station over right now </h1>
+        {this.state.map}
       </div>
     );
   }

@@ -39,8 +39,13 @@ export class MapContainer extends React.Component {
   };
 
   render() {
+    let className = this.props.loading ? "loading" : "loaded";
+    // let latitude = this.props.latitude;
+    // let longitude = this.props.longitude;
+    // console.log(latitude);
+    // console.log(longitude);
     return (
-      <div className="mapContainer">
+      <div className={className}>
         <Map
           google={this.props.google}
           zoom={5}
