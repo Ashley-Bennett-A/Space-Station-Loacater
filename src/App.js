@@ -27,26 +27,16 @@ class App extends React.Component {
         );
 
         this.setState({ map: map });
-
-        // if (data.message === "success") {
-        //   console.log(data);
-        //   this.setState({
-        //     loading: false,
-        //     longitude: data.iss_position.longitude,
-        //     latitude: data.iss_position.latitude,
-        //     error: false
-        //   });
-        // } else {
-        //   this.setState({
-        //     error: true
-        //   });
-        // }
       });
   }
   render() {
     return (
       <div className="App">
-        <h1> Where is the International Space Station over right now?</h1>
+        <h1>
+          {" "}
+          Where in the world is the International Space Station overhead right
+          now?
+        </h1>
         {this.state.map}
       </div>
     );

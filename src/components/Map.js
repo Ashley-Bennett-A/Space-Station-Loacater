@@ -38,23 +38,22 @@ export class MapContainer extends React.Component {
     scaledSize: { width: 32, height: 32 }
   };
 
+  options = {
+    google: this.props.google,
+    zoom: 5,
+    style: mapStyles,
+    initialCenter: {
+      lat: this.props.latitude,
+      lng: this.props.longitude
+    }
+  };
+
   render() {
     let className = this.props.loading ? "loading" : "loaded";
-    // let latitude = this.props.latitude;
-    // let longitude = this.props.longitude;
-    // console.log(latitude);
-    // console.log(longitude);
+    console.log(this.props.google.maps);
     return (
       <div className={className}>
-        <Map
-          google={this.props.google}
-          zoom={5}
-          style={mapStyles}
-          initialCenter={{
-            lat: this.props.latitude,
-            lng: this.props.longitude
-          }}
-        >
+        <Map {...this.options}>
           <Marker
             onClick={this.onMarkerClick}
             name={"International Space Station is directly above here"}
