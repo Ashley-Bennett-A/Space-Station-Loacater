@@ -46,7 +46,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1> Where is the International Space Station over right now </h1>
+        <h1> Where is the International Space Station over right now?</h1>
         {this.state.map}
       </div>
     );

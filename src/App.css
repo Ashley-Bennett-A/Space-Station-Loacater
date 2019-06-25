@@ -2,32 +2,17 @@
   text-align: center;
 }
 
-.mapContainer {
-  /* display: flex;
-  justify-content: space-around; */
+body {
+  background-color: #a9daff;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.loading {
-  /* display: inline-block; */
-  width: 64px;
-  height: 64px;
-}
-.loading:after {
-  content: " ";
-  display: block;
-  width: 46px;
-  height: 46px;
-  margin: 1px;
-  border-radius: 50%;
-  border: 5px solid #feda4a;
-  border-color: #feda4a transparent #feda4a transparent;
-  animation: lds-dual-ring 1.2s linear infinite;
-}
-@keyframes lds-dual-ring {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+h1 {
+  position: absolute;
+  text-align: center;
+  top: 50px;
+  left: 50%;
+  z-index: 1;
+  width: 100%;
+  transform: translateX(-50%);
 }

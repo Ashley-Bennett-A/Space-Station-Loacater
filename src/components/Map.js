@@ -3,8 +3,8 @@ import { Map, GoogleApiWrapper, Marker, InfoWindow } from "google-maps-react";
 
 //  Styling of the map includng size
 const mapStyles = {
-  width: "90%",
-  height: "90%"
+  width: "100%",
+  height: "100%"
 };
 
 export class MapContainer extends React.Component {
