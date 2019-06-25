@@ -12,17 +12,14 @@ class App extends React.Component {
   };
 
   componentDidMount() {
-    fetch("http://api.open-notify.org/iss-now.json")
+    fetch("https://api.wheretheiss.at/v1/satellites/25544")
       .then(results => {
         return results.json();
       })
       .then(data => {
         let map = (
           <div className="mapContainer">
-            <MapContainer
-              latitude={data.iss_position.latitude}
-              longitude={data.iss_position.longitude}
-            />
+            <MapContainer latitude={data.latitude} longitude={data.longitude} />
           </div>
         );
 
