@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "bb1010c22d298fa4386c078eaea1deb9",
+    "revision": "af0b5e2c340843c53fceea587778b71d",
     "url": "/Space-Station-Loacator/index.html"
   },
   {
-    "revision": "231cec27d7548467e183",
+    "revision": "8501cb70932f7aabc9d7",
     "url": "/Space-Station-Loacator/static/css/main.7e2f7eec.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Space-Station-Loacator/static/js/2.9c12039a.chunk.js"
   },
   {
-    "revision": "231cec27d7548467e183",
-    "url": "/Space-Station-Loacator/static/js/main.c6faf403.chunk.js"
+    "revision": "8501cb70932f7aabc9d7",
+    "url": "/Space-Station-Loacator/static/js/main.4634fb12.chunk.js"
   },
   {
     "revision": "ddccd7c8f5ab72e4b7df",
