@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Space-Station-Loacator/precache-manifest.acc49a9faea410af5a9acd4e926e4a6e.js"
+  "/Space-Station-Loacator/precache-manifest.cf9deeb542df2c390c666a1d73c6f1c8.js"
 );
 
 self.addEventListener('message', (event) => {
